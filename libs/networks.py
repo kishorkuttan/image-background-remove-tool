@@ -158,7 +158,7 @@ class U2NET:
 
         if isinstance(data, str) or isinstance(data, Path):
             try:
-                image = Image.open(data)  # Load image if there is a path
+                image = Image.open(data)  # Load image if there is a path, if it doesn't work use cv2.imread()
             except IOError:
                 logger.error('Cannot retrieve image. Please check file: ' + str(data))
                 return False, False
